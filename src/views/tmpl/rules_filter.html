@@ -1,0 +1,39 @@
+{% extends 'tmpl/layout.html' %}
+
+{% block title %}Filtre{% endblock %}
+{% block breadcrumb %}Filtre{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="css/default.css">
+{% endblock %}
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+<h2>Liste des règles de filtrage</h2>
+{% for row in items %}
+
+<table id="myTab" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Adresse IP source</th>
+        <th>Port source</th>
+        <th>Adresse IP destination</th>
+        <th>Port destination</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in items %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.ipAddressSrc }}</td>
+            <td>{{ row.portSrc }}</td>
+            <td>{{ row.ipAddressDst }}</td>
+            <td>{{ row.portDst }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endfor %}
+{% endblock %}

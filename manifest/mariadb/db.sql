@@ -30,6 +30,9 @@ CREATE TABLE IF NOT EXISTS `webiptables`.`nat_filter` (
 INSERT INTO `webiptables`.`nat_rules` (`idNat`, `nameNat`, `ipAddress`, `port`, `type`) VALUES
 	(1, 'NAT le port 22 sur le serveur Web1', '10.0.0.1', 22, 'Source Nat');
 
+INSERT INTO `webiptables`.`nat_filter` (`idNat`, `name`, `ipAddressSrc`, `portSrc`, `ipAddressDst`, `portDst`) VALUES
+	(2, 'Règle 1', '*', 22, '10.0.0.1', 80);
+
 INSERT INTO `webiptables`.`nat_alias` (`id`, `name`, `ipAddress`, `port`) VALUES
 	(1, 'SSH WebServer1', '10.0.0.1', 22);
 
